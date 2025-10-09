@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+:root{
+    --background: #E0E1DD;
+    --text: #202124;
+}
+
+html{
+    background-color: var(--background);
+    font-family: 'JetBrains Mono', monospace;
+    margin-top: 0.5em;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 0.5em;
+}
+
+.navbar{
+    padding: 0.5em;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16pt;
+}
+
+.navbar-left{
+    display: flex;
+    gap: 1em;
+}
+
+.navbar-right{
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.home{
+    margin: 0.25em;
+    padding: 0.5em;
+    display: flex;
+    text-align: end;
+    justify-content: flex-end;
+    flex-direction: column;
+    gap: 0.25em;
+}
+
+.home-title{
+    font-size: 75pt;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+
+.links{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    gap: 0.5em;
+    padding-top: 1em;
+}
+
+.links-button{
+    background-color: transparent;
+    border: none;
+    font-size: 16pt;
+    font-family: 'JetBrains Mono', monospace;
+    cursor: pointer;
+    padding: 0.25em 0.5em;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 0.25em;
+}
+
+.links-dark{
+    background-color: var(--text);
+    color: var(--background);
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.links-light{
+    border: var(--text) 0.125em solid;
+}

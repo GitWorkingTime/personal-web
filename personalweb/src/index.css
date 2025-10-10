@@ -52,6 +52,7 @@ html{
 .links{
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     flex-direction: row;
     gap: 0.5em;
     padding-top: 1em;
@@ -66,6 +67,8 @@ html{
     padding: 0.25em 0.5em;
     transition: background-color 0.3s, color 0.3s;
     border-radius: 0.25em;
+
+    animation: shrink 0.2s forwards;
 }
 
 .links-dark{
@@ -77,4 +80,18 @@ html{
 
 .links-light{
     border: var(--text) 0.125em solid;
+}
+
+.links-button:hover{
+    animation: grow 0.2s forwards;
+}
+
+@keyframes grow{
+    from {transform: scale(1);}
+    to {transform: scale(1.1);}
+}
+
+@keyframes shrink{
+    from {transform: scale(1.1);}
+    to {transform: scale(1);}
 }

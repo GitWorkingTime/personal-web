@@ -4,7 +4,7 @@ import darkModeButton from './assets/webp/icons8-dark-mode-50.webp'
 import githubIcon from './assets/webp/github-mark.webp'
 import linkedInIcon from './assets/webp/InBug-Black.webp'
 import itchIcon from './assets/webp/itchio-logo-textless-black.webp'
-import resume from './assets/Resume_External.pdf'
+import resume from './assets/Resume_External_Web.pdf'
 
 function App() {
   const portfolioRef = useRef(null);
@@ -25,7 +25,9 @@ function App() {
       </div>
       <div className="navbar-right">
         <button className='links-contact links-button links-light'>Contact Me</button>
-        <img className='dark-mode-button links-button' src={darkModeButton} height={30} width={30}></img>
+        <button className='links-button'>
+          <img src={darkModeButton} height={30} width={30}></img>
+        </button>
       </div>
     </div>
     <div className="container">

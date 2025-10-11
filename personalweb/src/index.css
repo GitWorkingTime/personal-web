@@ -8,8 +8,8 @@
 html{
     background-color: var(--background);
     font-family: 'JetBrains Mono', monospace;
-    margin-top: 5em;
-    margin-left: 1em;
+    margin-top: clamp(3em, 10vw, 6em);
+    margin-left: clamp(0.5em, 0.5vw, 1em);
     margin-right: 1em;
     margin-bottom: 0.5em;
     scroll-behavior: smooth;
@@ -19,12 +19,12 @@ html{
     position: fixed;
     top: 0;
     left: 0;
-    padding: 0.5em;
+    padding: 1vw;
     box-sizing: border-box;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    font-size: 16pt;
+    font-size: clamp(8px, 1vw, 10px);
     z-index: 100000;
 
     /* From https://css.glass */
@@ -67,8 +67,16 @@ html{
 }
 
 .title{
-    font-size: 75pt;
+    text-size-adjust: auto;
+    font-size: clamp(27pt, 9vw, 60pt);
     font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+
+.home-description{
+    text-size-adjust: auto;
+    font-size: clamp(9pt, 2vw, 16pt);
     margin: 0;
     padding: 0;
 }
@@ -80,15 +88,38 @@ html{
     align-items: center;
 }
 
+@media (max-width: 600px){
+    .projects{
+        grid-template-rows: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 601px){
+    .projects{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 .projects{
     display: grid;
     gap: 1em;
-    grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 500px){
+    .project-block{
+        width: clamp(225px, 12vw, 500px);
+        height: clamp(150px, 10vw, 500px);
+    }
+}
+
+@media (min-width: 501px){
+    .project-block{
+        width: clamp(300px, 10vw, 400px);
+        height: clamp(175px, 7vw, 300px);
+    }
 }
 
 .project-block{
-    width: 20vw;
-    height: 30vh;
     border: var(--text) 0.2em solid;
     border-radius: 1em;
     padding: 0.5em;
@@ -99,9 +130,13 @@ html{
 }
 
 .project-block-title{
-    font-size: 20pt;
+    font-size: clamp(10pt, 5vw, 20pt);
     font-weight: 600;
     text-align: center;
+}
+
+.project-block-description{
+    font-size: clamp(8pt, 2.5vw, 11pt);
 }
 
 /* Links */
@@ -110,14 +145,14 @@ html{
     justify-content: flex-end;
     align-items: center;
     flex-direction: row;
-    gap: 0.75em;
+    gap: 0.5vw;
     padding-top: 1em;
 }
 
 .links-button{
     background-color: transparent;
     border: none;
-    font-size: 16pt;
+    font-size: clamp(10pt, 1vw, 16pt);
     font-family: 'JetBrains Mono', monospace;
     cursor: pointer;
     padding: 0.25em 0.5em;
@@ -126,6 +161,16 @@ html{
     color: var(--text);
     text-decoration: none;
     animation: shrink 0.2s forwards;
+}
+
+.links-button img,
+.links-button svg,
+.links-button .icon {
+    width: clamp(20px, 4vw, 40px);
+    height: auto;
+    display: inline-block;
+    flex-shrink: 0;
+    vertical-align: middle;
 }
 
 .links-dark{

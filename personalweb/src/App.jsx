@@ -61,8 +61,33 @@ function App() {
         </div>
       </div>
       <div ref={portfolioRef} className="portfolio">
-          <div className="title">
+          <div className='title'>
             Portfolio
+          </div>
+          <div className='projects'>
+            <div className='project-block'>
+              <div className='project-block-text'>
+                <div className='project-block-title'>Video games</div>
+                <div className='project-block-description'>
+                  A small collection of video games that uses <b>Unity</b> and <b>Godot</b>, <b>GDScript</b> and <b>C#</b>. Check it out here!
+                </div>
+              </div>
+              <a className="project-block-link" href="https://doopsgame.itch.io/" target="_blank" rel="noopener noreferrer">
+                <div className='links-button links-light'>Itch.io Page</div>
+              </a>
+            </div>
+            <div className='project-block'>
+              <div className='project-block-text'>
+                <div className='project-block-title'>Basic HTTP Server</div>
+                <div className='project-block-description'>
+                  A Basic HTTP server utilizing <b>C</b> and <b>TCP/IP Protocols</b> to create a LAN server to host a basic chat messaging 
+                  web-based app made in <b>HTML</b>, <b>CSS</b>, and <b>JavaScript</b>.
+                </div>
+              </div>
+              <a className="project-block-link" href="https://github.com/GitWorkingTime/CSE-FP-CS30-V2" target="_blank" rel="noopener noreferrer">
+                <div className='links-button links-light'>GitHub</div>
+              </a>
+            </div>
           </div>
       </div>     
     </div>

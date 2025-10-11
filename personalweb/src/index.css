@@ -8,22 +8,39 @@
 html{
     background-color: var(--background);
     font-family: 'JetBrains Mono', monospace;
-    margin-top: 0.5em;
+    margin-top: 5em;
     margin-left: 1em;
     margin-right: 1em;
     margin-bottom: 0.5em;
+    scroll-behavior: smooth;
 }
 
 .navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
     padding: 0.5em;
+    box-sizing: border-box;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     font-size: 16pt;
+    z-index: 100000;
+    /* From https://css.glass */
+    background: rgba(224, 225, 221, 0.45);
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(224, 225, 221, 0.3);
 }
 
 .navbar-left{
     display: flex;
+    padding-left: 1em;
     gap: 1em;
+    align-items: center;
 }
 
 .navbar-right{
@@ -32,21 +49,33 @@ html{
     align-items: center;
 }
 
+.container{
+    height: 100vh;
+    width: 100%;
+}
+
 .home{
+    height: 100vh;
     margin: 0.25em;
     padding: 0.5em;
     display: flex;
     text-align: end;
-    justify-content: flex-end;
+    justify-content: flex-start;
     flex-direction: column;
     gap: 0.25em;
 }
 
-.home-title{
+.title{
     font-size: 75pt;
     font-weight: 600;
     margin: 0;
     padding: 0;
+}
+
+.portfolio{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
 }
 
 .links{
@@ -54,7 +83,7 @@ html{
     justify-content: flex-end;
     align-items: center;
     flex-direction: row;
-    gap: 0.5em;
+    gap: 0.75em;
     padding-top: 1em;
 }
 
@@ -86,12 +115,14 @@ html{
     animation: grow 0.2s forwards;
 }
 
+
+/* Animation: */
 @keyframes grow{
     from {transform: scale(1);}
-    to {transform: scale(1.1);}
+    to {transform: scale(1.05);}
 }
 
 @keyframes shrink{
-    from {transform: scale(1.1);}
+    from {transform: scale(1.05);}
     to {transform: scale(1);}
 }
